@@ -4,9 +4,6 @@ Main points
 -> Docker Network -> Multiple containers
 
 
-
-
-
 DOCKER Workflow
 1. Docker Client -> User interface (CLI, GUI)
 2. Docker Host (Docker Deamon) -> Creates And Manages containers -> Build Images 
@@ -24,7 +21,6 @@ Docker Keywords
 8. VOLUME ["/data"]     -> Creates a mount point for externally mounted volumes
 9. CMD ["executable", "param1", "param2"]   -> Provides default commands to execute when the container starts
 10. ENTRYPOINT != CMD  -> cannot be overridden
-11. 
 
 
 // Commands Example
