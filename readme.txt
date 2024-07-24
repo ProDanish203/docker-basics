@@ -1,0 +1,97 @@
+Main points
+-> Image -> Container -> Volume 
+-> Maintains Isolation
+-> Docker Network -> Multiple containers
+
+
+
+
+
+DOCKER Workflow
+1. Docker Client -> User interface (CLI, GUI)
+2. Docker Host (Docker Deamon) -> Creates And Manages containers -> Build Images 
+3. Docker Registry (Docker Hub) -> Kinda Github thing
+
+
+Docker Keywords
+1. FROM image[:tag] [AS name]   -> specified base Image
+2. WORKDIR /path/to/workdir   -> sets the working directory
+3. COPY [--chown=<user>:<group> <src>... <dest>]        -> Copy the files and directories from the build context to the image
+4. RUN <command>    -> Executes command in the shell during image build
+5. EXPOSE <port> [<port>/<protocol>]    -> informs docker that the container will listen on specified network ports at runtime
+6. ENV KEY=VALUE   -> Sets the environment variables
+7. ARG <name>[=<default value>]    -> Defines bild time variable
+8. VOLUME ["/data"]     -> Creates a mount point for externally mounted volumes
+9. CMD ["executable", "param1", "param2"]   -> Provides default commands to execute when the container starts
+10. ENTRYPOINT != CMD  -> cannot be overridden
+11. 
+
+
+// Commands Example
+FROM node:latest
+
+WORKDIR /app
+
+COPY package*.json
+
+COPY . /app
+
+RUN npm run dev  
+
+EXPOSE 3000
+
+ENV NODE_ENV=production
+
+ARG NODE_VERSION=20
+
+VOLUME /myvol
+
+CMD ["npm", "start"]
+
+
+
+
+// DOCKER COMMANDS
+
+docker pull [source]
+
+docker run -it [image_name]    -> To execute the image by creating a container
+
+
+// Create image *
+docker build -t [wokrdir] .
+
+// View all Images 
+docker images
+
+//run image *
+docker run [image_name]
+
+// Port mapping 
+docker run -p 5173:5173 [image_name]
+
+// Get all containers
+docker ps
+
+// Stop the container to listen
+docker stop [first 3 letters of the container id OR name]
+
+// Get rid of all inactive containers 
+docker container prune
+
+// Remove a specific container 
+docker rm [first 3 letters of the container id OR name] --force 
+
+// hot reload running command with port mapping
+docker run -p 5173:5173 -v "$(pwd):/app" -v /app/node_modules react-docker 
+
+
+// Publish a docker image
+docker login 
+docker tag [image_name] docker_username/image_name
+docker push docker_username/image_name
+
+
+
+// Docker compose -> Automates the operation by using the .yaml file
+docker compose up --watch
