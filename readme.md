@@ -93,6 +93,15 @@ docker rm [container_id/name] --force
 docker run -p 5173:5173 -v "$(pwd):/app" -v /app/node_modules [image_name]
 ```
 
+### Other commands to run the image
+
+```bash
+docker start [container_id]
+docker restart [container_id]
+docker pause [container_id]
+docker unpause [container_id]
+```
+
 ## Publish a Docker Image
 
 ```bash
