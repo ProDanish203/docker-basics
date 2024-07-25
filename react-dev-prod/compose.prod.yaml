@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - "8000:80"
+      
+volumes:
+  tasked:
+    
