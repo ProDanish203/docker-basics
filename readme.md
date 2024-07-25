@@ -48,7 +48,7 @@ CMD ["npm", "start"]
 ### Build the Docker image
 
 ```bash
-docker build -t [image_name]
+docker build -t [image_name] .
 ```
 
 ### View Docker images

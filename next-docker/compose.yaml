@@ -20,7 +20,7 @@ services:
           action: sync
 
     environment:
-      DB_URL: mongodb+srv://danishsidd203:ironmanrocks203@firstmongo.t9wuplp.mongodb.net/docker-todo-app
+      DB_URL: YOUR_MONGO_ATLAS_URL
 
 volumes:
   tasked:
