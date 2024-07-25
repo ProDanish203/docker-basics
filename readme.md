@@ -87,6 +87,11 @@ docker container prune
 docker rm [container_id/name] --force
 ```
 
+### Delete an image
+```bash
+docker rmi [image_id] --force
+```
+
 ### Run with hot reloading
 
 ```bash
@@ -247,3 +252,20 @@ services:
 volumes:
   anime:
 ```
+
+
+## To specify the file to build the docker image
+```bash
+docker build -f Dockerfile.dev -t [image_name]:[tag] .
+```
+
+## To specify the file to compose the docker container
+```bash
+docker compose -f compose.prod.yaml up --build
+```
+
+## To compose a specific service
+```bash
+docker compose up [service_name] --build
+```
+
