@@ -66,8 +66,11 @@ docker run [image_name]
 // Port mapping 
 docker run -p 5173:5173 [image_name]
 
-// Get all containers
+// Get all running containers
 docker ps
+
+// Get all containers
+docker ps -a
 
 // Stop the container to listen
 docker stop [container_id/name]

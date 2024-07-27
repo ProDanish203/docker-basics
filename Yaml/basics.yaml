@@ -1,0 +1,45 @@
+courses:
+  course_name: "Javascript Basics"
+  version: 1.0
+  price: &price 12.99
+  is_public: true
+  release_date: 2024-01-24 12:23:22
+  pre_enroll: null
+  # Arrays
+  tags:
+    - javascript
+    - programming
+    - web development
+  course_ta: ["John Doe", "Jane Doe", "Alice Doe"]
+  # Array of Objects
+  ta_details:
+    - name: "John Doe"
+      email: "john@gmail.com"
+      role: "Admin"
+    - name: "Jane Doe"
+      email: "jane@gmail.com"
+      role: "TA"
+    - { name: "Alice Doe", email: "alice@gmail.com", role: "TA" }
+  short_desc: >
+    here is a short 
+    description of the course
+  long_desc: |
+    here is a long 
+    description of the course
+  about: |
+    yaml is a data serialization language
+    it is easy to read and write
+    it is human-readable
+  used_for:
+    - web development
+    - data serialization
+    - configuration files
+  # Variables
+  process_payment: *price
+
+  adv: &adv
+    my_key: myval
+  
+  another_adv:
+    one: two
+    <<: *adv

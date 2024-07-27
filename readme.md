@@ -63,10 +63,16 @@ docker images
 docker run -p 5173:5173 [image_name]
 ```
 
-### Get all containers
+### Get all running containers
 
 ```bash
 docker ps
+```
+
+### Get all containers
+
+```bash
+docker ps -a
 ```
 
 ### Stop a running container
